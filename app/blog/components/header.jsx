@@ -1,10 +1,19 @@
 import Image from "next/image";
 import { DesktopNavItem, MobileNavItem } from "./ResponsiveNavItem";
 import { IconSearch } from "./Icon";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Header() {
+  const [isdark, setisdark] = useState();
+
+  useEffect(() => {
+    function a() {
+      setisdark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+    a();
+  }, []);
+
   const LOGOURL =
     "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/logo.webp";
 
@@ -22,7 +31,7 @@ export default function Header() {
     <header className="sticky top-0 z-50  border-b border-gray-100 bg-white/80  backdrop-blur-md dark:bg-gray-950/80 dark:border-gray-800 ">
       <div className="flex gap-3 top-2.5 relative mx-auto border sm:w-[90%] max-[639px]:w-[90%] lg:w-80 md:w-70  justify-center h-10 items-center  ">
         <span
-          className={`absolute bottom-7 text-blue-600   font-bold ${window.matchMedia("(prefers-color-scheme: dark)").matches ? "bg-[#1c2228f1]" : "bg-white"} `}
+          className={`absolute bottom-7 text-blue-600   font-bold ${isdark ? "bg-[#1c2228f1]" : "bg-white"} `}
         >
           {" "}
           My work
@@ -56,12 +65,6 @@ export default function Header() {
             {NAV_ITEMS.map((item) => (
               <DesktopNavItem key={item.label} item={item} />
             ))}
-
-            {/* <div className="relative bottom-2">
-              <span className="text-gray-500 pt-2 mt-2 bg-white h-10 w-10 rounded-full flex justify-center mx-auto ">
-                <IconSearch />
-              </span>
-            </div> */}
           </nav>
 
           <div className="flex items-center gap-10 w-full">

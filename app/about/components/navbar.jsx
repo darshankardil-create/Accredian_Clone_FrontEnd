@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
@@ -9,6 +10,14 @@ const Navbar = ({ BASE }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [coursesOpen, setCoursesOpen] = React.useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = React.useState(false);
+  const [isdark, setisdark] = React.useState(false);
+
+  React.useEffect(() => {
+    function a() {
+      setisdark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+    a();
+  }, []);
 
   const LOGO = `${BASE}/other/logo.webp`;
 
@@ -49,8 +58,7 @@ const Navbar = ({ BASE }) => {
       <div className="flex justify-between items-end py-3 px-4 xl:px-12 max-w-screen-2xl mx-auto h-27">
         <div className="flex gap-3 top-2.5 absolute  border w-70 left-1/2 translate-x-[-50%] justify-center h-10 items-center  ">
           <span
-            className={`absolute bottom-7 text-blue-600   font-bold ${window.matchMedia("(prefers-color-scheme: dark)").matches ? "bg-[#1c2228f1]" : "bg-white"}
-`}
+            className={`absolute bottom-7 text-blue-600   font-bold ${isdark ? "bg-[#1c2228f1]" : "bg-white"}`}
           >
             My work
           </span>
