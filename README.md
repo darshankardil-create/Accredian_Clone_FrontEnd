@@ -126,7 +126,7 @@ npm run dev
 ---
 # Lead Capture Form
 
-This lead capture form opens when a user clicks key call-to-action buttons—such as "Enquire Now," "Contact Us," or "Schedule a 1-on-1 Call." The backend is built with Node.js, Express,Nodemailer and MongoDB, and it is deployed on Render. after a lead is submitted, the data is stored in MongoDB. For demonstration purposes, the email address is flexible; however, in a real-world scenario, the email ID will be hard-coded. In that case, whenever a user generates a lead, the form data will be stored in the MongoDB database, and the lead-generated email will be sent to the team.
+Form opens when a user clicks key call-to-action buttons—such as "Enquire Now," "Contact Us," or "Schedule a 1-on-1 Call." The backend is built with Node.js, Express,Nodemailer and MongoDB, and it is deployed on Render. after a lead is submitted, the data is stored in MongoDB. For demonstration purposes, the email address is flexible; however, in a real-world scenario, the email ID will be hard-coded. In that case, whenever a user generates a lead, the form data will be stored in the MongoDB database, and the lead-generated email will be sent to the team.
 
 ## Key Features
 
