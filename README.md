@@ -1,10 +1,10 @@
 # Accredian Clone Project
 
-**Live Demo:** [accredianclonefrontendvercel.vercel.app](https://accredianclonefrontendvercel.vercel.app/) 
+### Live Demo: [accredianclonefrontendvercel.vercel.app](https://accredianclonefrontendvercel.vercel.app/) (Clone made by me)
 
-**Backend Repository:** [github.com/darshankardil-create/accredian_clone_backend](https://github.com/darshankardil-create/accredian_clone_backend)
+### Backend Repository: [github.com/darshankardil-create/accredian_clone_backend](https://github.com/darshankardil-create/accredian_clone_backend)
 
-##    Clones of the following pages:
+###   Made clones of the following pages: (Original)
 1. [Accredian Enterprise](https://enterprise.accredian.com/)
 2. [Accredian About Us](https://accredian.com/About)
 3. [Accredian Blog](https://blog.accredian.com/)
