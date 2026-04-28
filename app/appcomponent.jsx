@@ -17,7 +17,7 @@ import Style from "./components/landingpage/style";
 
 export default function Accredian() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden" data-theme="light">
       <Style />
       {/* ═══ Navbar ══════════════════════════════════════════════════ */}
       <Navbar />

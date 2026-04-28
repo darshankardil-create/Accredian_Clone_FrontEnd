@@ -21,7 +21,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50  border-b border-gray-100 bg-white/80  backdrop-blur-md dark:bg-gray-950/80 dark:border-gray-800 ">
       <div className="flex gap-3 top-2.5 relative mx-auto border sm:w-[90%] max-[639px]:w-[90%] lg:w-80 md:w-70  justify-center h-10 items-center  ">
-        <span className="absolute bottom-7 bg-white font-bold">My work</span>
+        <span
+          className={`absolute bottom-7 text-blue-600   font-bold ${window.matchMedia("(prefers-color-scheme: dark)").matches ? "bg-[#1c2228f1]" : "bg-white"} `}
+        >
+          {" "}
+          My work
+        </span>
+
         <Link className="hover:text-blue-500 " href="blog">
           Blog page
         </Link>
@@ -62,7 +68,7 @@ export default function Header() {
             <div className="hidden max-[895px]:block w-full ">
               <div className="flex justify-end  gap-6 ">
                 <span className="z-50">
-                  <label className="btn btn-circle swap swap-rotate bg-white border-none">
+                  <label className="btn btn-circle swap swap-rotate border-none">
                     {/* this hidden checkbox controls the state */}
                     <input
                       type="checkbox"
@@ -98,7 +104,7 @@ export default function Header() {
                   </label>
                 </span>
 
-                <span className="text-gray-500 pt-2.5 bg-white h-10 w-10 rounded-full flex justify-center max-[895px]:absolute max-[895px]:right-15">
+                <span className="text-gray-500 pt-2.5  h-10 w-10 rounded-full flex justify-center max-[895px]:absolute max-[895px]:right-15">
                   <IconSearch />
                 </span>
               </div>

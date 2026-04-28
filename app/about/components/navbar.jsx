@@ -3,7 +3,7 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import NavDropdown from "./NavDropdown";
 import MobileAccordion from "./MobileAccordion";
-import Link from "next/link"
+import Link from "next/link";
 
 const Navbar = ({ BASE }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -41,27 +41,29 @@ const Navbar = ({ BASE }) => {
   ];
 
   return (
-    <nav className="w-full bg-white fixed z-20 top-14.25  md:top-15.25 shadow-sm">
+    <nav
+      className={
+        "w-full bg-white fixed  z-20 top-14.25  md:top-15.25 shadow-sm"
+      }
+    >
       <div className="flex justify-between items-end py-3 px-4 xl:px-12 max-w-screen-2xl mx-auto h-27">
-
-
-
-      <div className="flex gap-3 top-2.5 absolute border w-70 left-1/2 translate-x-[-50%] justify-center h-10 items-center  ">
-        <span className="absolute bottom-7 bg-white font-bold">My work</span>
-        <Link className="hover:text-blue-500 " href="blog">
-          Blog page
-        </Link>
-        <Link className="hover:text-blue-500" href="about">
-          About page
-        </Link>
-        <Link className="hover:text-blue-500" href="/">
-          Main page
-        </Link>
-      </div>
-
-
-
-
+        <div className="flex gap-3 top-2.5 absolute  border w-70 left-1/2 translate-x-[-50%] justify-center h-10 items-center  ">
+          <span
+            className={`absolute bottom-7 text-blue-600   font-bold ${window.matchMedia("(prefers-color-scheme: dark)").matches ? "bg-[#1c2228f1]" : "bg-white"}
+`}
+          >
+            My work
+          </span>
+          <Link className="hover:text-blue-500 " href="blog">
+            Blog page
+          </Link>
+          <Link className="hover:text-blue-500" href="about">
+            About page
+          </Link>
+          <Link className="hover:text-blue-500" href="/">
+            Main page
+          </Link>
+        </div>
 
         {/* Logo */}
         <a href={""}>
