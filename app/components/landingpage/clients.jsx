@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Clients = () => {
+const Clients = ({ widthmob }) => {
   const CLIENTS = [
     {
       src: "/img/rel.png",
@@ -11,7 +11,7 @@ const Clients = () => {
       src: "/img/hcl.png",
       alt: "HCL",
       cls: "w-16 h-16 sm:w-24 sm:h-24 md:w-40 md:h-40",
-    } ,
+    },
     {
       src: "/img/ibm.png",
       alt: "IBM",
@@ -46,19 +46,47 @@ const Clients = () => {
             <span className="text-universal">Industry`s Best</span>
           </p>
         </div>
-        <ul className="hidden sm:grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 xl:gap-12 mt-6">
-          {CLIENTS.map(({ src, alt, cls }) => (
-            <li key={alt} className="flex justify-center items-center sm:p-4">
-              <Image
-                src={src}
-                alt={alt}
-                width={96}
-                height={96}
-                className={`object-contain ${cls} transition-transform duration-200 hover:scale-110`}
-              />
-            </li>
-          ))}
-        </ul>
+
+        {widthmob ? (
+          <marquee
+            direction="right"
+            className="marque"
+            onMouseEnter={(e) => e.currentTarget.stop()}
+            onMouseLeave={(e) => e.currentTarget.start()}
+          >
+            <div className="max-[640px]:flex sm:grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 xl:gap-12 mt-6">
+              {CLIENTS.map(({ src, alt, cls }) => (
+                <li
+                  key={alt}
+                  className="flex justify-center items-center sm:p-4"
+                >
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={96}
+                    height={96}
+                    className={`object-contain ${cls} transition-transform duration-200 hover:scale-110`}
+                  />
+                </li>
+              ))}
+            </div>
+          </marquee>
+        ) : (
+          <div className="max-[640px]:flex sm:grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 xl:gap-12 mt-6">
+            {CLIENTS.map(({ src, alt, cls }) => (
+              <li key={alt} className="flex justify-center items-center sm:p-4">
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={96}
+                  height={96}
+                  className={`object-contain ${cls} transition-transform duration-200 hover:scale-110`}
+                />
+              </li>
+            ))}
+          </div>
+        )}
+
         <div className="sm:hidden overflow-hidden relative w-full mt-4">
           <div className="flex whitespace-nowrap animate-marquee">
             {[...CLIENTS, ...CLIENTS].map(({ src, alt }, i) => (

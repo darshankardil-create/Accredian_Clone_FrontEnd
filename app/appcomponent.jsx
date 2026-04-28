@@ -15,9 +15,25 @@ import Accredianedge from "./components/landingpage/Accredianedge";
 import Faqs from "./components/landingpage/Faqs";
 import Style from "./components/landingpage/style";
 
+import React from "react";
+
 export default function Accredian() {
+  const [widthmob, setwidthmob] = React.useState();
+
+  React.useEffect(() => {
+    const func = () => {
+      setwidthmob(window.innerWidth <= 639);
+    };
+
+    window.addEventListener("resize", func);
+
+    return () => {
+      window.removeEventListener("resize", func);
+    };
+  }, []);
+
   return (
-    <div className="w-full overflow-x-hidden" data-theme="light" >
+    <div className="w-full overflow-x-hidden" data-theme="light">
       <Style />
       {/* ═══ Navbar ══════════════════════════════════════════════════ */}
       <Navbar />
@@ -27,8 +43,8 @@ export default function Accredian() {
         <div className="sm:px-16 px-0 flex justify-center">
           <div className="max-w-340 w-full">
             <Record />
-            <Clients />
-            <Accredianedge />
+            <Clients widthmob={widthmob} />
+            <Accredianedge widthmob={widthmob} />
             <Domainexpert />
             <Segmentation />
             <Whomejoin />

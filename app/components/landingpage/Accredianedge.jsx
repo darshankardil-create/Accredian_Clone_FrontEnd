@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const Accredianedge = () => {
+const Accredianedge = ({ widthmob }) => {
+  console.log(widthmob);
   return (
     <div id="accredianEdge" className="mt-12 px-4 md:px-8 xl:px-12">
       <div className="text-center pb-8">
@@ -12,14 +13,23 @@ const Accredianedge = () => {
           <span className="text-universal">Our Strategic Training</span>
         </p>
       </div>
-      <div className="hidden sm:flex justify-center mb-8">
+      <div className="sm:flex justify-center mb-8">
         <div className="w-full h-auto rounded-lg">
-          <Image
-            src={"/img/accredian-edge-usp-v3.svg"}
-            alt="Accredian Edge"
-            width={1200}
-            height={600}
-          />
+          {widthmob ? (
+            <Image
+              src={"/img/accredian-edge-usp-mobile.svg"}
+              alt="Accredian Edge"
+              width={800}
+              height={500}
+            />
+          ) : (
+            <Image
+              src={"/img/accredian-edge-usp-v3.svg"}
+              alt="Accredian Edge"
+              width={1200}
+              height={600}
+            />
+          )}
         </div>
       </div>
     </div>
